@@ -1,10 +1,13 @@
-import logo from './logo.svg';
+import React from 'react';
+import Patientform from './components/Patientform';
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hospital management website!!</h1>
+    <div>
+      <Navbar />
+      <Patientform />
     </div>
   );
 }

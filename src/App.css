@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+.patient-form{
+  margin-top: 4em;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img
+{
+  border-radius: 45%;
+  border: solid gray;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.log
+{
+  background-color: rgb(29, 16, 148);
+  border-radius: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.text1
+{
+  position: absolute;
+  font-family :sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20.05px;
+  font-weight: 250;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text1::before
+{
+  content: 'Doctor Module';
+  color: #399;
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  transition: 0.001s;
+}
+.text1:hover::before
+{
+  width: 108%;
+}
+.text2
+{
+  position: absolute;
+  font-family :sans-serif;
+  top: 50%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  font-size: 20.0399px;
+  font-weight: 250;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text2::before
+{
+  content: 'Patient Module';
+  color: #399;
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  transition: 0.001s;
 }
+.text2:hover::before
+{
+  width: 110%;
+}
+.text3
+{
+  position: absolute;
+  font-family :sans-serif;
+  top: 50%;
+  left: 76.5%;
+  transform: translate(-50%, -50%);
+  font-size: 20.05px;
+  font-weight: 250;
+  color: white;
+}
+
+.text3::before
+{
+  content: 'Admin Module';
+  color: #399;
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  transition: 0.001s;
+}
+.text3:hover::before
+{
+  width: 110%;
+}
+.text4
+{
+  position: absolute;
+  font-family :sans-serif;
+  top: 50%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+  font-size: 20.088px;
+  font-weight: 250;
+  color: white;
+}
+
+.text4::before
+{
+  content: 'Register';
+  color: #399;
+  position: absolute;
+  width: 0;
+  overflow: hidden;
+  transition: 0.001s;
+}
+.text4:hover::before
+{
+  width: 110%;
+}
+
