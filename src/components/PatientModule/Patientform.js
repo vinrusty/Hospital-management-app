@@ -18,10 +18,16 @@ function Patientform() {
                 <label for="Address" class="form-label">Address</label>
                 <input type="text" class="form-control" id="Address"/>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <div class="mb-3 row">
+                <div className='col'>
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div className='col'>
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age"/>
+                </div>
             </div>
             <label for='bloodgroup' class='form-label'>Blood group</label>
             <div className='mb-3'>
@@ -42,7 +48,13 @@ function Patientform() {
             <label class="form-check-label" for="inlineRadio4">AB+</label>
             </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <label class='form-label' for='symtoms-text'>Symptoms of the patient</label>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+            <button type="submit" class="btn btn-primary m-1">Submit</button>
+            <button type="reset" class="btn btn-primary m-1">Reset</button>
+            <div class="input-group">
+            {/* <span class="input-group-text">With textarea</span> */}
+            </div>
             </form>
         </div>
     )

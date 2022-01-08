@@ -1,10 +1,28 @@
+*{
+  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+body{
+  height: 100%;
+  width: 100%;
+}
 .patient-form{
   margin-top: 4em;
+  width: 60%;
 }
-img
-{
-  border-radius: 45%;
-  border: solid gray;
+.crd{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.crd2{
+  margin-left:1em;
+}
+.card-img{
+  width:50%;
+  border-radius: 50%;
 }
 .log
 {
@@ -110,5 +128,15 @@ img
 .text4:hover::before
 {
   width: 110%;
+}
+.navbar-container{
+  position: sticky;
+  top:0;
+}
+.nav-items{
+  margin-left:auto;
+}
+.login-btn{
+  width:100px;
 }
 

@@ -1,0 +1,42 @@
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+.btn-style{
+  padding-left: 2.5rem; 
+  padding-right: 2.5rem;
+}
+.login-wrap{
+  height: 100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+}
+.login-card{
+  width: 40%;
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgb(240, 240, 240);
+}
+.login-image{
+  width:50%;
+  align-self: center;
+  justify-self: center;
+}
+.form-content{
+  width: 80%;
+  align-self: center;
+  justify-self: center;
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
