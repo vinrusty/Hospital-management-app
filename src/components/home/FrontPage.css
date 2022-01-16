@@ -1,0 +1,20 @@
+.header-img{
+    background-image: url('https://304ljw4amcep3ali496xph6b-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/Penn-Medicine-Princeton-Exterior-Night-Shot-1900.jpg');
+}
+.back-img{
+    background-image: url('https://hms.harvard.edu/sites/default/files/styles/featured_card_thumbnail/public/teaser-images/Antibodies_750.jpg?itok=mqkN6EV3');
+    background-size: cover;
+}
+.height-fix{
+    height: 20rem;
+}
+.about-us{
+    /* background: #FBFEF9; */
+    /* background: #121113; */
+    background: #FBF9FF;
+}
+.about-us-card{
+    background: #FFFF;
+    padding: 3em;
+    border-radius: 30px;
+}
