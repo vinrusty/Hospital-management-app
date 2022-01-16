@@ -1,0 +1,65 @@
+.covid-wrapper{
+    margin:2em;
+    padding:2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.chart-wrapper{
+    height:50vh;
+    background-color: #0d6efd;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.card2
+{
+    border-radius: 10px;
+    text-align: center;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 210px 80px;
+    grid-template-areas: "image" "text" "stats";
+    background: #FFF;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.card-header{
+    background: #FFF;
+}
+.card-stats{
+    padding:1em;
+}
+.card-img-top{
+    overflow: hidden;
+}
+.card-text2
+{
+    grid-area: text;
+    margin: 10px;
+    padding:1em;
+}
+
+.card-stats
+{
+    grid-area: stats;
+}
+
+.card_font2
+{
+    color: grey;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card2:hover
+{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.outline
+{
+    border: solid 2px #0d6efd;
+    border-radius: 5px;
+}
