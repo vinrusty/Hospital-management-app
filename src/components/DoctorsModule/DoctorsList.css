@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Roboto:wght@100&display=swap');
+
+h1
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 52px;
+    margin-top: 60px;
+    text-align: center;
+    margin-right: 1.5em;
+}
+
+.team
+{
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 100px 0;
+}
+
+.team .team_member
+{
+    background: #ffffff;
+    margin: 5px;
+    margin-bottom: 50px;
+    width: 320px;
+    padding: 20px;
+    /* height: 350px; */
+    line-height: 20px;
+    color: #8e8b8b;
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    margin-right: 25px;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8); */
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.team .team_member h3
+{
+    color: #81c644;
+    font-size: 30px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.team .team_member p.role
+{
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 12px 0;
+}
+
+.team .team_member p.role1
+{
+    color: #000;
+    font-size: 19px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.team .team_member .team_img
+{
+    width: 118px;
+    height: 118px;
+    position: absolute;
+    border-radius: 50%;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+}
+
+.team .team_member .team_img img
+{
+    width: 118px;
+    height: 118px;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.team .team_member:hover
+{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.button1
+{
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid rebeccapurple;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+
+}
+
+.button1:hover
+{
+   background-color: transparent;
+   color: rebeccapurple;
+   border: 2px solid rebeccapurple;
+}
+
+.button0
+{
+    padding: 15px;
+}

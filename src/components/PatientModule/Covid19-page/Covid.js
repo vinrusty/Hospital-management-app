@@ -31,7 +31,7 @@ function Covid() {
                 </div>
             </div>
             <div class="col-sm-4 px-3 py-3 py-sm-0">
-                <div class="card box-shadow card2 card_font2 shadow">
+                <div class="card box-shadow card2 card_font2">
                     <img src="https://www.gethealthystayhealthy.com/sites/default/files/styles/article_image_default/public/2019-04/hospital-discharge.jpg?itok=Rk6yw_z1" class="card-img-top"/>
                     <div class="card-header">
                       Active

@@ -6,7 +6,7 @@ function FrontPage() {
         <div>
            <header class="py-5 bg-image-full header-img">
             <div class="text-center my-5">
-                <img class="img-fluid rounded-circle mb-4" src="C:\Users\Sumukh Kashi\Downloads\hmslogo.png"width="100" height="200" alt="..." />
+                <img class="img-fluid rounded-circle mb-4" src="/images/hms-logo.jpeg"width="100" height="200" alt="..." />
                 
                 <p class="text-white-70 mb-0">Serving you as always</p>
             </div>

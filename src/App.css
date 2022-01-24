@@ -8,8 +8,10 @@ body{
   width: 100%;
 }
 .patient-form{
-  margin-top: 4em;
+  margin-top: 1.5em;
   width: 60%;
+  border-radius: 20px;
+  background: #FBF9FF;
 }
 .crd{
   display:flex;

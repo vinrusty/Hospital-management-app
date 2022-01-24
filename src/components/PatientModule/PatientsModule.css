@@ -45,19 +45,41 @@ a:focus {
     width: 100%;
     align-items: stretch;
 }
+.father-wrapper{
+    display: flex;
+}
+
+.patient-module-wrapper{
+    /* margin-left: 260px; */
+    margin-top: 2px;
+    margin-right: 5px;
+    /* position: absolute;
+    top:70px; */
+}
+
+.head-wrapper{
+    border-radius: 10px;
+}
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    /* min-width: 250px;
+    max-width: 250px; */
+    position: sticky;
+    top:0;
     /* background: #7386D5; */
     background: #212529;
     color: #fff;
     transition: all 0.3s;
     /* position: absolute;
     top:70px; */
-    height: 100vh;
+    height: 90vh;
     margin: 2px;
     border-radius: 10px;
+    z-index: 2;
+    width: 260px;
+}
+.display-6{
+    font-size: 1.5rem;
 }
 
 #sidebar.active {
