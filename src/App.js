@@ -13,6 +13,7 @@ import Covid from './components/PatientModule/Covid19-page/Covid';
 import Prescription from './components/DoctorsModule/Prescription';
 import DoctorsList from './components/DoctorsModule/DoctorsList';
 import EmergencyWard from './components/DoctorsModule/EmergencyWard';
+import PatientCard from './components/PatientModule/PatientCard';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/doctors-module/doctors-list' element={<DoctorsList/>} />
           <Route path='/doctors-module/emergency-ward-registration' element={<EmergencyWard/>} />
           <Route path='/patients-module' element={<PatientsModule/>} />
+          <Route path='/patients-module/patients-list' element={<PatientCard/>} />
           <Route path='/patients-module/covid-19' element={<Covid/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/patient-profile' element={<PatientProfile/>} />

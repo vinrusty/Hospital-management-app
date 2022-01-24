@@ -3,7 +3,8 @@ import axios from 'axios'
 
 function Patientform() {
 
-    const [name, setName] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [address, setAddress] = useState('')
     const [email, setEmail] = useState('')
     const [age, setAge] = useState('')
@@ -12,24 +13,59 @@ function Patientform() {
     const [type, setType] = useState('')
     const [symptom, setSymptom] = useState('')
 
-    const patient = {
-        name,
-        address,
-        email,
-        age,
-        phone,
-        bloodgroup,
-        type,
-        symptom
+    const handleSubmit = async(event) =>{
+        try{
+            event.preventDefault()
+            const currentDate = new Date()
+            const data = await axios.post('http://localhost:3000/patient-register',
+                            { 
+                                name: firstName+" "+lastName,
+                                age: Number(age),
+                                blood_group: bloodgroup,
+                                ailment: type,
+                                address: address,
+                                email: email,
+                                phone: phone,
+                                symptom: symptom,
+                                joined_date: currentDate.getDate()+"/"+currentDate.getMonth()+"/"+currentDate.getFullYear(),
+                                joined_time: currentDate.getHours()+":"+currentDate.getMinutes() 
+                            },
+                            {
+                                headers: {'Content-Type':'application/json'}
+                            })
+            const registeredPatient = await data.data;
+        }
+        catch(err){
+            console.log('could not register')
+        }
     }
 
-    const handleSubmit = (event) =>{
-        event.preventDefault()
-        axios.post('http://localhost:3000/patient-register',{ patient },{
-            headers: {'Content-Type':'application/json'}
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log('couldnt register!'))
+    const handleFirstName = (e) =>{
+        setFirstName(e.target.value)
+    }
+    const handleLirstName = (e) =>{
+        setLastName(e.target.value)
+    }
+    const handleAddress = (e) =>{
+        setAddress(e.target.value)
+    }
+    const handleEmail = (e) =>{
+        setEmail(e.target.value)
+    }
+    const handleAge = (e) =>{
+        setAge(e.target.value)
+    }
+    const handlePhone = (e) =>{
+        setPhone(e.target.value)
+    }
+    const handleBloodgroup = (e) =>{
+        setBloodgroup(e.target.value)
+    }
+    const handleType = (e) =>{
+        setType(e.target.value)
+    }
+    const handleSymptom = (e) =>{
+        setSymptom(e.target.value)
     }
 
     return (
@@ -51,8 +87,8 @@ function Patientform() {
             </div>
             <div class="mb-3 row">
                 <div className='col'>
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"/>
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div className='col'>
@@ -67,38 +103,38 @@ function Patientform() {
             <label for='bloodgroup' class='form-label'>Blood group</label>
             <div className='mb-3'>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="O+"/>
             <label class="form-check-label" for="inlineRadio1">O+</label>
             </div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="A+"/>
             <label class="form-check-label" for="inlineRadio2">A+</label>
             </div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="B+"/>
             <label class="form-check-label" for="inlineRadio3">B+</label>
             </div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="AB+"/>
             <label class="form-check-label" for="inlineRadio4">AB+</label>
             </div>
             </div>
             <label for='bloodgroup' class='form-label'>Type of Ailment</label>
             <div className='mb-3'>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="covid-19"/>
             <label class="form-check-label" for="inlineRadio1">Covid-19</label>
             </div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="cardiovascular"/>
             <label class="form-check-label" for="inlineRadio2">Cardiovascular</label>
             </div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="neurological"/>
             <label class="form-check-label" for="inlineRadio3">Neurological</label>
             </div>
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"/>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="diabetes"/>
             <label class="form-check-label" for="inlineRadio4">Diabetes</label>
             </div>
             </div>

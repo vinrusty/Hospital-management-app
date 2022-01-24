@@ -44,14 +44,16 @@ function PatienModule() {
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
-                    <div class="col-lg-4 p-4 shadow">
-                        <h2 class="h4 fw-bolder">My Profile</h2>
-                        <p>The profile gives you insight into your account. Get access to personal details furnished at the time of admission.</p>
-                        <a class="text-decoration-none" href="#!">
-                            View Details
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                    <Link to='/patients-module/patients-list' class="col-lg-4 p-4 shadow">
+                        <div>
+                            <h2 class="h4 fw-bolder">Patients List</h2>
+                            <p>The profile gives you insight into your account. Get access to personal details furnished at the time of admission.</p>
+                            <a class="text-decoration-none" href="#!">
+                                View Details
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </section>
