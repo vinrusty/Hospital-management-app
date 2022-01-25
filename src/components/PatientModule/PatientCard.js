@@ -46,7 +46,7 @@ function PatientCard() {
                                 <h4>{patient.name}</h4>
                             </div>
                             <div className='col'>
-                                <h4>{patient.patient_id}</h4>
+                                <h4>{patient._id}</h4>
                             </div>
                             <div className='col'>
                                 <h4>{patient.joined_date}</h4>
