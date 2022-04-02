@@ -1,6 +1,6 @@
 import React,{ useState, useEffect, useRef } from 'react'
 import axios from 'axios'
-import { Toast } from 'bootstrap'
+import { SimpleToast } from '../util/Toast'
 
 function Patientform() {
 
@@ -13,62 +13,68 @@ function Patientform() {
     const [bloodgroup, setBloodgroup] = useState('')
     const [type, setType] = useState('')
     const [symptom, setSymptom] = useState('')
-    let [toast, setToast] = useState(false)
+    const [patientId, setPatientId] = useState('')
+    const [toast, setToast] = useState(false)
+    const [openError, setOpenError] = useState(false)
     const toastRef = useRef()
 
-    useEffect(() => {
-        let myToast = toastRef.current
-        let bsToast = Toast.getInstance(myToast)
-        
-        if (!bsToast) {
-            // initialize Toast
-            bsToast = new Toast(myToast, {autohide: false})
-            // hide after init
-            bsToast.hide()
-            setToast(false)
-        }
-        else {
-            // toggle
-            toast ? bsToast.show() : bsToast.hide()
-        }
-    })
-
     const handleSubmit = async(event) =>{
-        try{
-            event.preventDefault()
-            const currentDate = new Date()
-            const data = await axios.post('http://localhost:3000/patient-register',
-                            { 
-                                name: firstName+" "+lastName,
-                                age: Number(age),
-                                blood_group: bloodgroup,
-                                ailment: type,
-                                address: address,
-                                email: email,
-                                phone: phone,
-                                symptom: symptom,
-                                joined_date: currentDate.getDate()+"/"+currentDate.getMonth()+1+"/"+currentDate.getFullYear(),
-                                joined_time: currentDate.getHours()+":"+currentDate.getMinutes()
-                            },
-                            {
-                                headers: {'Content-Type':'application/json'}
-                            })
-            const registeredPatient = await data.data;
-            if(registeredPatient){
-                setTimeout(() => {
-                    setToast(toast => !toast)
-                }, 3000)
-                setToast(toast => !toast)
+        let result = email.slice(-10).match(/@gmail.com/)
+        let result2 = phone.match(/[1-9][0-9]{9}/)
+        if(result && result2) {
+            try{
+                event.preventDefault()
+                const currentDate = new Date()
+                const data = await axios.post('http://localhost:3000/patient-register',
+                                { 
+                                    patient_id: patientId,
+                                    name: firstName+" "+lastName,
+                                    age: Number(age),
+                                    blood_group: bloodgroup,
+                                    ailment: type,
+                                    address: address,
+                                    email: email,
+                                    phone: phone,
+                                    symptom: symptom,
+                                    joined_date: currentDate.getDate()+"/"+currentDate.getMonth()+1+"/"+currentDate.getFullYear(),
+                                    joined_time: currentDate.getHours()+":"+currentDate.getMinutes()
+                                },
+                                {
+                                    headers: {'Content-Type':'application/json'}
+                                })
+                const registeredPatient = await data.data;
+                if(registeredPatient){
+                    setToast(true)
+                }
+                else{
+                    setOpenError(true)
+                    console.log('could not register')
+                }
             }
-            else{
+            catch(err){
+                setOpenError(true)
                 console.log('could not register')
             }
         }
-        catch(err){
-            console.log('could not register')
+        else {
+            setOpenError(true)
         }
     }
-
+    const handleToast = (event, reason) => {
+        if(reason === 'clickaway'){
+            return;
+        }
+        setToast(false);
+    }
+    const handleErrorToast = (event, reason) => {
+        if(reason === 'clickaway'){
+            return;
+        }
+        setOpenError(false);
+    }
+    const handlePatientIDChange = (e) =>{
+        setPatientId(e.target.value)
+    }
     const handleFirstName = (e) =>{
         setFirstName(e.target.value)
     }
@@ -113,6 +119,10 @@ function Patientform() {
         <div className='container shadow p-4 patient-form'>
             <div>
             <div class="mb-3 row">
+                <div className='col'>
+                    <label for="patientId" class="form-label">Patient ID</label>
+                    <input type="text" class="form-control" id="PatientId" onChange={handlePatientIDChange}/>
+                </div>
                 <div className='col'>
                     <label for="FirstName" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="FirstName" onChange={handleFirstName}/>
@@ -160,7 +170,7 @@ function Patientform() {
             <label class="form-check-label" for="AB+">AB+</label>
             </div>
             </div>
-            <label for='bloodgroup' class='form-label'>Type of Ailment</label>
+            <label for='ailment' class='form-label'>Type of Ailment</label>
             <div className='mb-3'>
             <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="covid-19" value="covid-19" onClick={handleType}/>
@@ -188,6 +198,18 @@ function Patientform() {
             </div>
             </div>
         </div>
+        <SimpleToast
+        open={toast}
+        message="Successfully Registered the Patient"
+        handleCloseToast={handleToast}
+        severity="success"
+        />
+        <SimpleToast
+        open={openError}
+        message="Could not register the patient. Try again!"
+        handleCloseToast={handleErrorToast}
+        severity="error"
+        />
         </>
     )
 }

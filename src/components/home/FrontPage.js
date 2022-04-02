@@ -12,6 +12,8 @@ function FrontPage() {
             </div>
         </header>
         <section class="py-5 about-us">
+            <img className='animated-img shadow' src='/images/health.jpg' alt='animation' />
+            <img className='animated-img2 shadow' src='/images/health2.png' alt='animation2' />
             <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 about-us-card shadow">
@@ -26,6 +28,7 @@ function FrontPage() {
             <div class='height-fix'></div>
         </div>
         <section class="py-5 about-us">
+            <img class='animated-virus' src='/images/virus.png' alt='virus' />
             <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 about-us-card shadow">

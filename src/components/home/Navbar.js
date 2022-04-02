@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Login from '../auth/login'
 
 function Navbar() {
     return (
@@ -12,7 +11,7 @@ function Navbar() {
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><Link to='/doctors-module' class="nav-link" aria-current="page">Doctor</Link></li>
                         <li class="nav-item"><Link to='/patients-module' class="nav-link">Patient</Link></li>
-                        <li class="nav-item"><Link to='/' class="nav-link">Emergency Contact</Link></li>
+                        <li class="nav-item"><a href='#footer' class="nav-link">Emergency Contact</a></li>
                     </ul>
                 </div>
             </div>

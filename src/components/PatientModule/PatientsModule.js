@@ -1,19 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Sidebar from './Sidebar'
 import './PatientsModule.css'
 
 function PatienModule() {
     return (
         <div className='father-wrapper'>
-        <Sidebar/>
            <div className='patient-module-wrapper'>
             <header class="bg-dark py-5 head-wrapper">
             <div class="container px-5">
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Welcome</h1>
+                            <h1 class="welcome display-5 fw-bolder text-white mb-2">Welcome</h1>
                             <p class="lead text-white-50 mb-4">Feel free to access your health reports and stats.<br/>
                                 Serving you as always!
                             </p>
@@ -28,18 +26,20 @@ function PatienModule() {
         <section class="py-5 border-bottom" id="features">
             <div class="container px-5 my-5">
                 <div class="row gx-5">
-                    <div class="col-lg-4 mb-5 mb-lg-0 p-4 shadow">
-                        <h2 class="h4 fw-bolder">Covid-19 History</h2>
-                        <p>Seven coronaviruses can infect humans. This coronavirus causes fever, headache, and respiratory problems such as cough and shortness of breath</p>
-                        <a class="text-decoration-none" href="#!">
-                            View Details
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
+                    <Link to='/patients-module/emergency-ward' class="col-lg-4 p-4 shadow">
+                        <div>
+                            <h2 class="h4 fw-bolder">Patients in Emergency Ward</h2>
+                            <p>Get access to list of patients under special care.</p>
+                            <a class="text-decoration-none" href="#!">
+                                View Details
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </Link>
                     <div class="col-lg-4 mb-5 mb-lg-0 p-4 shadow">
                         <h2 class="h4 fw-bolder">Cardiovascular Health</h2>
                         <p>A healthy heart is central to overall good health. Embracing a healthy lifestyle at any age can prevent heart disease and lower your risk for a heart attack or stroke.</p>
-                        <a class="text-decoration-none" href="#!">
+                        <a class="text-decoration-none" href="https://medvisit.io/the-importance-of-cardiovascular-health/">
                             View Details
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -54,40 +54,6 @@ function PatienModule() {
                             </a>
                         </div>
                     </Link>
-                </div>
-            </div>
-        </section>
-        <section class="bg-light py-5 border-bottom head-wrapper mt-2">
-            <div class="container px-5 my-5">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bolder">Reports and Prescriptions</h2>
-                    <p class="lead mb-0">Access your reports and prescriptions with ease below!</p>
-                </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card mb-5 mb-xl-0">
-                            <div class="card-body p-3">
-                                <div class="mb-3">
-                                    <span class="display-6 ">Access Reports</span>
-                                </div>
-                                
-                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Click to View</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="card mb-3 mb-xl-0">
-                            <div class="card-body p-3">
-
-                                <div class="mb-3">
-                                    <span class="display-6 ">Access Prescriptions</span>
-                                </div>
-                                
-                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">Click to View</a></div>
-                            </div>
-                        </div>
-                    </div>
-                   
                 </div>
             </div>
         </section>
@@ -137,16 +103,12 @@ function PatienModule() {
                             
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             
-                            <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                            <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <footer class="py-5 bg-dark">
-            <div class="container px-5"><p class="m-0 text-center text-white">Accept cookies for an enhanced experience</p></div>
-        </footer>
            </div>
            </div>
     )

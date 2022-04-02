@@ -1,0 +1,74 @@
+.patient-profile-wrapper{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    /* padding: 1em; */
+    margin: 5px;
+}
+.patient-details-wrapper{
+    display: flex;
+    width:100%;
+    background: #C4CBCA;
+    padding:1em;
+    border-radius: 5px;
+}
+.doctors-assignment{
+    width: 30%;
+    background: rgb(219, 219, 219);
+    padding: 2rem;
+    border-radius: 10px;
+}
+.select-option{
+    width: 100%;
+    outline:none;
+    border:none;
+    background: rgb(231, 231, 237);
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.patient-image{
+    width:40%;
+    padding: 2em;
+    display: grid;
+}
+.patient-image>img{
+    width: 50%;
+    border-radius: 50%;
+    justify-self: center;
+    align-self: center;
+}
+.patient-image>h3{
+    align-self: center;
+    justify-self: center;
+    padding: 10px;
+}
+.patient-details{
+    width:50%;
+    display: grid;
+    padding:2rem;
+}
+.patient-details>h1{
+    text-align: center;
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+.patient-details-card>h3{
+    margin-top: 20px;
+}
+.prescriptions-wrapper{
+    display: flex;
+}
+.prescription-history{
+    background: rgb(219, 219, 219);
+    width: 100%;
+    margin: 0 5px;
+    border-radius: 5px;
+    padding:2rem;
+}
+.butn{
+    background: red;
+    color:white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

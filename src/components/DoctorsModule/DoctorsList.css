@@ -6,9 +6,12 @@ h1
     font-size: 52px;
     margin-top: 60px;
     text-align: center;
-    margin-right: 1.5em;
+    margin-right: 1.5em; 
+ }
+.doctor-list-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
 }
-
 .team
 {
     display: flex;

@@ -7,6 +7,12 @@ body{
   height: 100%;
   width: 100%;
 }
+.notfound{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .patient-form{
   margin-top: 1.5em;
   width: 60%;
@@ -67,7 +73,11 @@ body{
   font-weight: 250;
   color: white;
 }
-
+.module-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .text2::before
 {
   content: 'Patient Module';

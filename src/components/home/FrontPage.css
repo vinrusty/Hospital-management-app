@@ -12,9 +12,78 @@
     /* background: #FBFEF9; */
     /* background: #121113; */
     background: #FBF9FF;
+    position: relative;
+}
+.animated-img{
+    position: absolute;
+    border-radius: 10px;
+    padding: 2em;
+    background-color: #FFF;
+    animation-name: animation1;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    top: 10px;
+    transition: all 1s ease;
+}
+.animated-img2{
+    width: 300px;
+    position: absolute;
+    top: 250px;
+    left: 1200px;
+    padding: 1.2em;
+    transition: all 1s ease;
+    animation-name: animation2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border-radius: 10px;
 }
 .about-us-card{
     background: #FFFF;
     padding: 3em;
     border-radius: 30px;
+}
+
+.animated-virus {
+    position: absolute;
+    width: 350px;
+    transition: all 0.5s ease-in;
+    animation-name: virus;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animation1 {
+    from {
+        top: 20px;
+        left: 20px;
+    }
+    to {
+        top: 50px;
+        left: 50px;
+    }
+}
+
+@keyframes animation2 {
+    from {
+        top:250px;
+        left:1200px;
+    }
+    to {
+        top: 220px;
+        left: 1150px;
+    }
+}
+
+@keyframes virus {
+    from {
+        top: 0px;
+        transform: rotate(0deg);
+    }
+    to {
+        top: 200px;
+        transform: rotate(180deg);
+    }
 }

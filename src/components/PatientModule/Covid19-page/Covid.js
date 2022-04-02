@@ -1,15 +1,13 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import './Covid.css'
 import PatientCard from '../PatientCard'
 
 function Covid() {
+
+
     return (
         <div class='covid-wrapper'>
             <div class="container">
-        <div class="input-group">
-            <input type="search" class="form-control rounded" placeholder="Search for patient" aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" class="btn btn-outline-primary outline">search</button>
-          </div>
         <div className='container chart-wrapper shadow'>
 
         </div>
@@ -64,7 +62,10 @@ function Covid() {
             </div>
         </div>
     </div>
-    <PatientCard/>
+    <div class="input-group mt-4">
+        <input type="search" class="form-control rounded" placeholder="Search for patient" aria-label="Search" aria-describedby="search-addon" />
+    </div>
+    <PatientCard type='covid-19'/>
         </div>
     )
 }

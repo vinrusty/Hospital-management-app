@@ -1,0 +1,22 @@
+.footer-wrapper{
+    background: #212529;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+.footer-wrapper > img {
+    width: 300px;
+    align-self: center;
+    justify-self: center;
+}
+.contacts{
+    padding: 2rem;
+    color: white;
+    font-size: 2em;
+    align-self: center;
+    justify-self: center;
+}
+.contacts>li{
+    list-style: none;
+}
